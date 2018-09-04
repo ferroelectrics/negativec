@@ -15,7 +15,7 @@ def main():
     cells_ferro = np.array([15.0])
     cells_para = cells_ferro / 2
     thickness = np.array([10.0])
-    sigma = np.linapce(0.0, 1.0, 1000)
+    sigma = np.linspace(0.0, 1.0, 1000)
     need_prev = [False] + [True] * (len(sigma) - 1)
 
     chunks = 1
@@ -41,7 +41,7 @@ def main():
                 'phases' : {'name' : 'phase', 'order' : 0, 'values' : phases},
                 'cells_ferro' : {'name' : 'ferro_width', 'order' : 0, 'values' : cells_ferro},
                 'cells_para' : {'name' : 'para_width', 'order' : 0, 'values' : cells_para},
-                'thickness' : {'name' : 'thickness', 'order' : 0, 'values' : thickness}} #'columns' : {'name' : 'columns', 'order' : 1, 'values' : columns}
+                'thickness' : {'name' : 'thickness', 'order' : 0, 'values' : thickness}} 
         uniname = str(unpath.joinpath(unique_names[nn]))
         
         with open(uniname, 'wb') as output:

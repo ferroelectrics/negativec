@@ -31,7 +31,7 @@ ttb = fig.text(0.35, 0.86, "b", ha="center", va="center", size=32)
 spec = gridspec.GridSpec(ncols=2, nrows=1, wspace=0.1, hspace=0.0, width_ratios=[1, 2])
 ax = fig.add_subplot(spec[:, 1:])
 ax.set_xlim([-0.23, 0.23])
-axins = plt.axes([0.75, 0.47, 0.18, 0.275]) #inset_axes(ax, width='20%', height='30%', loc=1) #zoomed_inset_axes(ax, 3, loc=1) 
+axins = plt.axes([0.75, 0.47, 0.18, 0.275]) 
 
 ax.annotate('(3)', xy=(-0.045, 0.47), xytext=(-0.09, 0.47), arrowprops=dict(facecolor='black', width=2, headwidth=8), size=18)
 ax.annotate('(2)', xy=(-0.02, 0.26), xytext=(-0.06, 0.35), arrowprops=dict(facecolor='black', width=2, headwidth=8), size=18)

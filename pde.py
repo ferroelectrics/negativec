@@ -137,11 +137,9 @@ def congifure_parameters(variables, global_parameters):
     parameters['x_dir_periodic_trans'] = "'{} {} {}'".format(0, 1, 0)
     parameters['y_dir_periodic_trans'] = "'{} {} {}'".format(ferro_width, 0, 0)
     
-    parameters['mesh_name'] = 'box1.msh' #create_mesh(mesh_parameters, only_consume = False)
+    parameters['mesh_name'] = 'box1.msh' 
 
-    parameters['active_bcs'] = "''" #"'zero_column_x zero_column_y zero_column_z'"
-    #parameters['active_meshmod'] = "'column'"
-    #parameters['column_coords'] = "'{}'".format(' '.join(['{} {} {}'.format(c.x, c.y, c.z) for c in columns]))
+    parameters['active_bcs'] = "''" 
     
     if need_prev:
         parameters['active_ics'] = "'pxic pyic pzic'"
@@ -149,8 +147,8 @@ def congifure_parameters(variables, global_parameters):
         parameters['active_user_objects'] = "'soln kill'"
         parameters['previous_sim'] = "'{}.e'".format(global_parameters[-1]['previous_sim_name'])
     else:
-        parameters['active_ics'] = "'ic_polar_x_ferro_random ic_polar_y_ferro_random ic_polar_z_ferro_func'" #pz_dom_ic ic_polar_z_ferro_random
-        parameters['active_funcs'] = "'initial_cond_func'" #polar_func
+        parameters['active_ics'] = "'ic_polar_x_ferro_random ic_polar_y_ferro_random ic_polar_z_ferro_func'" 
+        parameters['active_funcs'] = "'initial_cond_func'" 
         parameters['active_user_objects'] = "'kill'"
         parameters['previous_sim'] = "'{}.e'".format('none_prev_sim')
         
@@ -209,7 +207,7 @@ def simulation(arguments):
         print(e)
         indices = [tuple(0 for i in range(len(prepared_parameters)))]
     
-    global_parameters = [{'previous_sim_name':'prev'}] #[{'previous_sim_name':'t_25_um_-0.013_phase_i_width_5_thickness_3_prev'}]
+    global_parameters = [{'previous_sim_name':'prev'}] 
     
     template = Template('sim.i')
 
